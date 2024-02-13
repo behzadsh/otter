@@ -1,0 +1,35 @@
+scenario:
+  name: Example Scenario
+  description: Optional detailed description of what this scenario tests.
+  steps:
+    - name: "Step 1: Get User Information"
+      path: /users/123 # use the base url configured in `.otter.yaml`
+      method: GET
+      headers:
+        Authorization: Bearer <YOUR_TOKEN_HERE>
+      assert:
+        status: 200
+        schema:
+          type: object
+          properties:
+            id:
+              type: number
+            name:
+              type: string
+            email:
+              type: string
+              format: email
+    - name: "Step 2: Update User Information"
+      url: https://api.example.com/users/123
+      method: PATCH
+      headers:
+        Content-Type: application/json
+        Authorization: Bearer <YOUR_TOKEN_HERE>
+      body: '{"name": "John Doe Updated"}' # you can also pass it as yaml
+      assert:
+        status: 200
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
