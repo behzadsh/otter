@@ -2,37 +2,33 @@ package assertions
 
 import "fmt"
 
-type StructureType uint8
+type SchemaType uint8
 
-var structureTypeValues = []string{
+var schemaTypeValues = []string{
 	"array",
 	"object",
 }
 
-func (t StructureType) String() string {
-	return structureTypeValues[t]
+func (t SchemaType) String() string {
+	return schemaTypeValues[t]
 }
 
 const (
-	StructureTypeArray StructureType = iota
-	StructureTypeObject
+	SchemaTypeArray SchemaType = iota
+	SchemaTypeObject
 )
 
-func CastStructureType(s string) (StructureType, error) {
-	for i, value := range structureTypeValues {
+func CastSchemaType(s string) (SchemaType, error) {
+	for i, value := range schemaTypeValues {
 		if s == value {
-			return StructureType(i), nil
+			return SchemaType(i), nil
 		}
 	}
 
-	return 0, fmt.Errorf("invalid structure type")
+	return 0, fmt.Errorf("invalid schema type")
 }
 
 type SchemaAssertion interface {
-	GetType() StructureType
+	GetType() SchemaType
 	Validate() error
-}
-
-type ObjectStructureAssertion struct {
-	Properties any `yaml:"properties"`
 }
