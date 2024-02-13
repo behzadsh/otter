@@ -1,4 +1,3 @@
 package assertions
 
-type ValueAssertion struct {
-}
+type ValueAssertion struct{}
