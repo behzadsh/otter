@@ -7,6 +7,7 @@ type SchemaType uint8
 var schemaTypeValues = []string{
 	"array",
 	"object",
+	"empty",
 }
 
 func (t SchemaType) String() string {
@@ -16,6 +17,7 @@ func (t SchemaType) String() string {
 const (
 	SchemaTypeArray SchemaType = iota
 	SchemaTypeObject
+	SchemaTypeEmpty
 )
 
 func CastSchemaType(s string) (SchemaType, error) {
