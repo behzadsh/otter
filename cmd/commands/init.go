@@ -6,13 +6,14 @@ import (
 	"github.com/spf13/cobra"
 	"gopkg.in/yaml.v3"
 
-	"github.com/behzadsh/otter/configs"
+	"github.com/behzadsh/otter/internal/configs"
 )
 
 var initCommand = &cobra.Command{
 	Use:     "init",
 	Short:   "Initiate the otter config file",
 	Example: "otter init -u http://localhost:8000",
+	Args:    cobra.NoArgs,
 	RunE:    runInitCommand,
 }
 

@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/behzadsh/otter/configs"
+	"github.com/behzadsh/otter/internal/configs"
 )
 
 var rootCmd = &cobra.Command{
@@ -22,6 +22,7 @@ func init() {
 	rootCmd.SetErrPrefix("otter:")
 
 	rootCmd.AddCommand(initCommand)
+	rootCmd.AddCommand(newCommand)
 }
 
 func Execute(ctx context.Context) error {
