@@ -39,8 +39,9 @@ func CastStringFormat(s string) (StringFormat, error) {
 }
 
 type StringProperty struct {
-	MinLength  *int          `yaml:"minLength"`
-	MaxLength  *int          `yaml:"maxLength"`
+	MinLength  *int          `yaml:"min-length"`
+	MaxLength  *int          `yaml:"max-length"`
+	Length     *int          `yaml:"length"`
 	Pattern    *string       `yaml:"pattern"`
 	Format     *StringFormat `yaml:"format"`
 	DateFormat *string       `yaml:"date-format"`
