@@ -22,7 +22,6 @@ func init() {
 	rootCmd.SetErrPrefix("otter:")
 
 	rootCmd.AddCommand(initCommand)
-	rootCmd.AddCommand(newCommand)
 }
 
 func Execute(ctx context.Context) error {
