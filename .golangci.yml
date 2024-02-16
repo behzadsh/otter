@@ -31,7 +31,7 @@ linters-settings:
       - name: cyclomatic
         disabled: true
       - name: line-length-limit
-        arguments: [ 180 ]
+        arguments: [ 120 ]
       - name: package-comments
         disabled: true
       - name: function-result-limit

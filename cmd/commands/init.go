@@ -26,7 +26,9 @@ var (
 func init() {
 	initCommand.Flags().StringVarP(&configFile, "config-path", "c", configFile, "define the path to the config file")
 	initCommand.Flags().StringVarP(&baseURL, "url", "u", baseURL, "define the API base urls")
-	initCommand.Flags().StringVarP(&testCasesPath, "test-cases-path", "d", testCasesPath, "define the path to where test scenarios are stored")
+	initCommand.Flags().StringVarP(
+		&testCasesPath, "test-cases-path", "d", testCasesPath, "define the path to where test scenarios are stored",
+	)
 
 	_ = initCommand.MarkFlagRequired("url")
 }
