@@ -6,6 +6,7 @@ type ArrayProperty struct {
 	MinItems    *int           `yaml:"min-items"`
 	MaxItems    *int           `yaml:"max-items"`
 	UniqueItems bool           `yaml:"unique-items"`
+	Equals      []any          `yaml:"equals"`
 }
 
 func (ArrayProperty) PropertyType() SchemaPropertyType {

@@ -46,6 +46,7 @@ type StringProperty struct {
 	Format     *StringFormat `yaml:"format"`
 	DateFormat *string       `yaml:"date-format"`
 	Enum       []string      `yaml:"enum"`
+	Equals     *string       `yaml:"equals"`
 }
 
 func (StringProperty) PropertyType() SchemaPropertyType {
